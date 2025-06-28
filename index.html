@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: rgb(255, 255, 150);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      border-bottom: 4px solid #00c52b;
+      border-radius: 2px;
+    }
+
+    p {
+      margin-left: 250px;
+      margin-right: 250px;
+    }
+
+    .box {
+      color: rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
+      padding: 22px;
+      height: 678px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    #sobat {
+        background-color: aqua;
+        float: right;
+        height: 58px;
+        width: 200px;
+        transition: height 4s, width 4s;
+        z-index: 675px;
+    }
+
+    #sobat:hover {
+        background-color: orange;
+        height: 400px;
+        width: 400px;
+    }
+
+    #jombi {
+      overflow: hidden;
+      background-color: #a3a3a3;
+    }
+
+    #jombi a {
+      float: left;
+      display: block;
+      width: 60px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 24px 16px;
+      text-decoration: none;
+      border-left: 2px solid;
+      background-color: #a3a3a3;
+      cursor: pointer;
+    }
+
+    #jombi a.active {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+    <div id="sobat"></div>
+  <h1>MY Article</h1>
+
+  <div id="jombi">
+    <a onclick="toggleBox('dua', this)">click</a>
+    <a onclick="toggleBox('bost', this)">here</a>
+    <a onclick="toggleBox('edo', this)">jalda</a>
+  </div>
+
+  <div id="dua" class="box">
+    <h2>Alat untuk menyatakan pikiran</h2>
+    <p>Tulisan terbaik adalah tulisan yang memakai hati...</p>
+  </div>
+
+  <div id="bost" class="box">
+    <h2>Bangsa Indonesia</h2>
+    <p>Bangsa Indonesia dengan bangsa lain itu ibarat seperti pedang...</p>
+  </div>
+
+  <div id="edo" class="box">
+    <h2>Penyebab dorongan berbuat baik</h2>
+    <p>1. Ancaman<br>2. Pujian<br>3. Karena memang baik...</p>
+  </div>
+
+  <script>
+    let lastOpened = null;
+
+    function toggleBox(boxId, linkElement) {
+      const boxes = document.querySelectorAll(".box");
+      const links = document.querySelectorAll("#jombi a");
+
+      // Apakah kotak yang sama sedang terbuka?
+      if (lastOpened === boxId) {
+        // Tutup semuanya
+        boxes.forEach(box => box.style.display = "none");
+        links.forEach(link => link.classList.remove("active"));
+        lastOpened = null;
+      } else {
+        // Tutup semua dulu
+        boxes.forEach(box => box.style.display = "none");
+        links.forEach(link => link.classList.remove("active"));
+
+        // Buka yang dipilih
+        document.getElementById(boxId).style.display = "block";
+        linkElement.classList.add("active");
+
+        // Simpan sebagai yang terakhir dibuka
+        lastOpened = boxId;
+      }
+    }
+  </script>
+
+</body>
+</html>
