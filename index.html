@@ -1,108 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <title>Artikel Interaktif</title>
   <style>
     body {
-      background-color: rgb(255, 255, 150);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('lod.jpg'); /* Gunakan lod.jpg */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    h1 {
+    header {
+      background-color: rgba(255, 165, 0, 0.9); /* darkorange semi-transparan */
       text-align: center;
-      margin: 40px;
+      padding: 30px 0;
     }
 
-    h2 {
-      text-align: center;
-      border-bottom: 4px solid #00c52b;
-      border-radius: 2px;
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: white;
     }
 
-    p {
-      margin-left: 250px;
-      margin-right: 250px;
-    }
-
-    .box {
-      color: rgb(0, 0, 0);
-      background-color: rgb(255, 255, 255);
-      padding: 22px;
-      height: 678px;
-      margin-bottom: 20px;
-      display: none;
-    }
-
-    #sobat {
-        background-color: aqua;
-        float: right;
-        height: 58px;
-        width: 200px;
-        transition: height 4s, width 4s;
-        z-index: 675px;
-    }
-
-    #sobat:hover {
-        background-color: orange;
-        height: 400px;
-        width: 400px;
-        z-index: 675px;
-    }
-
-    #jombi {
+    nav#jombi {
       overflow: hidden;
-      background-color: #a3a3a3;
+      background-color: rgba(163, 163, 163, 0.9);
+      display: flex;
+      justify-content: center;
     }
 
-    #jombi a {
-      float: left;
-      display: block;
-      width: 162px;
-      color: rgb(0, 0, 0);
-      text-align: center;
-      padding: 24px 16px;
+    nav#jombi a {
+      display: inline-block;
+      padding: 20px 30px;
       text-decoration: none;
-      border-left: 2px solid;
-      background-color: #a3a3a3;
+      color: black;
+      background-color: rgba(163, 163, 163, 0.9);
+      border-left: 2px solid black;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    #jombi a.active {
+    nav#jombi a.active {
       background-color: white;
       color: black;
     }
 
-    img {
-      margin-left: 200px;
+    .box {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.96);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      border-bottom: 4px solid #00c52b;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .box p, .box ul {
+      line-height: 1.6;
+    }
+
+    .box img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-    <div id="sobat"></div>
-  <h1>MY Article</h1>
 
-  <div id="jombi">
-    <a onclick="toggleBox('dua', this)">Di kediaman Ramzan Kadyrov</a>
-    <a onclick="toggleBox('bost', this)">bangsa indonesia</a>
-    <a onclick="toggleBox('edo', this)">pengaruh lingkungan terhadap kesehatan mental</a>
-  </div>
+  <header>
+    <h1>MY ARTICLE</h1>
+  </header>
+
+  <nav id="jombi">
+    <a onclick="toggleBox('dua', this)">Di Kediaman Ramzan Kadyrov</a>
+    <a onclick="toggleBox('bost', this)">Bangsa Indonesia</a>
+    <a onclick="toggleBox('edo', this)">Pengaruh Lingkungan</a>
+  </nav>
 
   <div id="dua" class="box">
-    <img src="gambar.png" height="400" width="800">
-    <p>Youtube(documente societe)</p>
-    <h2>Ramzan Kadyrov : Allah lah yang memberi kita semua </h2>
-    <p>Ramzan Kadyrov menyatakan hal yang luar biasa tentang identitas dirinya, Ramzan kadyrov yang kita tahu adalah seorang presiden checnya yang sangat religious, ia sedari kecil senang berkelahi dengan seekor beruang, dilansir dari video documente societre, tentang kehidupan Ramzan selama di kediamannya di kota grozny, rusia 
-Republic chechen adalah tempat teraaman
-Para anggtanya mengendarai mobil mewah yang bertuliskan Kadyrov, Ramzan beserta keluarganya tinggal disana dengan sederhana, dan Ramzan pun suka kesederhanaan ungkapnya 
-</p>
+    <h2>Ramzan Kadyrov: Allah lah yang memberi kita semua</h2>
+    <img src="gambar.png" alt="Ramzan Kadyrov">
+    <p>Ramzan Kadyrov menyatakan hal yang luar biasa tentang identitas dirinya. Ia adalah pemimpin Chechnya yang religius dan berkarakter kuat sejak kecil. Bahkan, ia disebut-sebut senang berkelahi dengan beruang sejak kecil.</p>
+    <p>Dalam dokumenter <em>Documente Societe</em>, kehidupannya di Grozny, Rusia, digambarkan penuh kesederhanaan meskipun dikelilingi kemewahan. Republik Chechnya digambarkan sebagai tempat teraman. Anggotanya mengendarai mobil mewah bertuliskan 'Kadyrov', tetapi Ramzan tetap hidup sederhana bersama keluarganya — karena itu yang ia sukai.</p>
   </div>
 
   <div id="bost" class="box">
     <h2>Bangsa Indonesia</h2>
-    <p>Bangsa Indonesia dengan bangsa lain itu ibarat seperti pedang yang telah lama terkubur, pedang bangsa lain sudah dipakai sudah digunakan sudah berbekas ada jasa dikenal namun masih biasa? Indonesia adalah pedang yang, jika ia bangun siap dipanggil ia, kuat, kokoh, bagus, lebih unggul dari yang lain tapi belum digunakan.</p>
+    <p>Bangsa Indonesia bagaikan pedang yang telah lama terkubur. Pedang bangsa lain telah digunakan dan dikenal, tapi Indonesia adalah pedang kuat, kokoh, dan indah yang belum digunakan. Jika bangsa ini bangkit, ia akan lebih unggul dari yang lain.</p>
   </div>
 
   <div id="edo" class="box">
-    <h2>Penyebab dorongan berbuat baik</h2>
-    <p>1. Ancaman<br>2. Pujian<br>3. Karena memang baik...</p>
+    <h2>Pengaruh Lingkungan terhadap Kesehatan Mental</h2>
+    <p>Berbuat baik adalah dorongan yang bisa datang dari berbagai pengaruh. Berikut ini adalah beberapa penyebabnya:</p>
+    <ul>
+      <li>Ancaman — rasa takut terhadap hukuman.</li>
+      <li>Pujian — keinginan mendapat pengakuan.</li>
+      <li>Karena memang ingin berbuat baik secara tulus.</li>
+    </ul>
   </div>
 
   <script>
@@ -112,22 +123,17 @@ Para anggtanya mengendarai mobil mewah yang bertuliskan Kadyrov, Ramzan beserta 
       const boxes = document.querySelectorAll(".box");
       const links = document.querySelectorAll("#jombi a");
 
-      // Apakah kotak yang sama sedang terbuka?
       if (lastOpened === boxId) {
-        // Tutup semuanya
         boxes.forEach(box => box.style.display = "none");
         links.forEach(link => link.classList.remove("active"));
         lastOpened = null;
       } else {
-        // Tutup semua dulu
         boxes.forEach(box => box.style.display = "none");
         links.forEach(link => link.classList.remove("active"));
 
-        // Buka yang dipilih
-        document.getElementById(boxId).style.display = "block";
+        const selectedBox = document.getElementById(boxId);
+        selectedBox.style.display = "block";
         linkElement.classList.add("active");
-
-        // Simpan sebagai yang terakhir dibuka
         lastOpened = boxId;
       }
     }
